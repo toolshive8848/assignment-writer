@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      color: #333;
+    }
+    header {
+      background: #0d6efd;
+      padding: 15px;
+      color: white;
+      font-size: 20px;
+      text-align: center;
+    }
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      padding: 10px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+    }
+    .toolbar button, .toolbar select {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .toolbar button:hover {
+      background: #f0f0f0;
+    }
+    .editor {
+      padding: 20px;
+      min-height: 80vh;
+      background: #fff;
+      margin: 20px auto;
+      max-width: 800px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    ✍️ Writer
+  </header>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <select onchange="execCommand('formatBlock', this.value)">
+      <option value="p">Paragraph</option>
+      <option value="h1">Heading 1</option>
+      <option value="h2">Heading 2</option>
+      <option value="h3">Heading 3</option>
+    </select>
+    <button onclick="execCommand('bold')"><b>B</b></button>
+    <button onclick="execCommand('italic')"><i>I</i></button>
+    <button onclick="execCommand('underline')"><u>U</u></button>
+    <button onclick="execCommand('insertUnorderedList')">• List</button>
+    <button onclick="execCommand('insertOrderedList')">1. List</button>
+    <button onclick="execCommand('justifyLeft')">⮜</button>
+    <button onclick="execCommand('justifyCenter')">⮝⮟</button>
+    <button onclick="execCommand('justifyRight')">⮞</button>
+  </div>
+
+  <!-- Editor -->
+  <div class="editor" id="editor" contenteditable="true">
+    Start writing your content here...
+  </div>
+
+  <script>
+    function execCommand(command, value = null) {
+      document.execCommand(command, false, value);
+    }
+  </script>
+
+</body>
+</html>
