@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Signup - ToolHive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white p-10 rounded-2xl shadow-lg w-full max-w-md">
+    <h1 class="text-3xl font-bold mb-6 text-center text-blue-600">Welcome to ToolHive</h1>
+    
+    <!-- Email Signup/Login -->
+    <form class="space-y-4">
+      <input type="email" placeholder="Email" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <input type="password" placeholder="Password" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">Continue</button>
+    </form>
+
+    <div class="my-6 flex items-center">
+      <hr class="flex-grow border-gray-300">
+      <span class="mx-2 text-gray-500">or</span>
+      <hr class="flex-grow border-gray-300">
+    </div>
+
+    <!-- Social Logins -->
+    <div class="space-y-3">
+      <button class="w-full flex items-center justify-center gap-3 border py-3 rounded-lg hover:bg-gray-50">
+        <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google" class="w-5 h-5"> Continue with Google
+      </button>
+      <button class="w-full flex items-center justify-center gap-3 border py-3 rounded-lg hover:bg-gray-50">
+        <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" alt="Facebook" class="w-5 h-5"> Continue with Facebook
+      </button>
+    </div>
+
+    <p class="text-center text-gray-600 mt-6 text-sm">By continuing, you agree to our <a href="#" class="text-blue-600">Terms</a> & <a href="#" class="text-blue-600">Privacy Policy</a>.</p>
+  </div>
+</body>
+</html>
