@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Researcher - AssignSavvy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-indigo-600">ToolHive Researcher</h1>
+    <div class="space-x-4">
+      <a href="index.html" class="hover:text-indigo-600">Home</a>
+      <a href="writer.html" class="hover:text-indigo-600">AI Writer</a>
+      <a href="researcher.html" class="hover:text-indigo-600 font-semibold">Researcher</a>
+      <a href="pricing.html" class="hover:text-indigo-600">Pricing</a>
+      <a href="auth.html" class="hover:text-indigo-600">Login</a>
+    </div>
+  </nav>
+
+  <!-- Search Section -->
+  <section class="max-w-5xl mx-auto mt-10">
+    <div class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-semibold mb-4">AI Research Assistant</h2>
+      <div class="flex space-x-3">
+        <input type="text" id="searchInput" placeholder="Enter your research question..." 
+               class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+        <button class="bg-indigo-600 text-white px-5 py-3 rounded-lg hover:bg-indigo-700">
+          Search
+        </button>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex space-x-4 mt-4">
+        <select class="p-2 border rounded-lg">
+          <option>All Sources</option>
+          <option>Journals</option>
+          <option>News</option>
+          <option>Websites</option>
+        </select>
+        <select class="p-2 border rounded-lg">
+          <option>Any Date</option>
+          <option>Past Week</option>
+          <option>Past Month</option>
+          <option>Past Year</option>
+        </select>
+        <select class="p-2 border rounded-lg">
+          <option>Relevance</option>
+          <option>Newest</option>
+          <option>Oldest</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="max-w-5xl mx-auto mt-8">
+    <h3 class="text-lg font-semibold mb-3">Results</h3>
+    <div id="resultsContainer" class="space-y-4">
+      <!-- AI-generated results will appear here dynamically -->
+      <div class="p-4 bg-white shadow-md rounded-lg text-gray-700">
+        <p class="text-gray-500 italic">No results yet. Try searching for something above.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- History Section -->
+  <section class="max-w-5xl mx-auto mt-10 mb-16">
+    <h3 class="text-lg font-semibold mb-3">Search History</h3>
+    <div id="historyContainer" class="space-y-2">
+      <!-- Empty for now -->
+      <p class="text-gray-400 italic">No history yet.</p>
+    </div>
+  </section>
+
+</body>
+</html>
