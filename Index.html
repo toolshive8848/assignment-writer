@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AssignSavvy - Master Your Workflow with AI</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --purple: #6B46C1;
+      --deep-blue: #4C51BF;
+      --blue: #3498db;
+      --green: #68D391;
+      --orange: #F6AD55;
+      --bg-light: #F7FAFC;
+      --bg-muted: #EDF2F7;
+      --text-dark: #2D3748;
+      --radius: 0.5rem;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--bg-light);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1200px; margin: auto; padding: 0 1rem; }
+
+    /* Header / Top Bar */
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    header .logo {
+      font-size: 1.5rem; font-weight: 700; color: var(--purple);
+    }
+    header .btn {
+      background: var(--purple); color: #fff; padding: 0.5rem 1.25rem;
+      border-radius: var(--radius); font-weight: 600;
+    }
+
+    /* Hero */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      min-height: 90vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; position: relative; color: #fff;
+    }
+    .hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.55); backdrop-filter: blur(3px);
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 800px; padding: 2rem;
+    }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .cta-buttons a {
+      display: inline-block; margin: 0.5rem; padding: 0.75rem 1.5rem;
+      border-radius: var(--radius); font-weight: 600;
+    }
+    .btn-primary { background: var(--purple); color: #fff; }
+    .btn-outline { border: 2px solid #fff; color: #fff; }
+
+    /* Features */
+    .features { padding: 4rem 1rem; background: var(--bg-muted); }
+    .features h2 { text-align: center; font-size: 2rem; margin-bottom: 0.5rem; }
+    .features p { text-align: center; margin-bottom: 3rem; color: #555; }
+    .feature-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 2rem;
+    }
+    .feature-card {
+      background: #fff; border-radius: var(--radius); padding: 2rem; text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .feature-card i {
+      font-size: 2rem; margin-bottom: 1rem; padding: 1rem; border-radius: 50%;
+      display: inline-flex; justify-content: center; align-items: center;
+      color: #fff;
+    }
+    .feature-writer i { background: var(--blue); }
+    .feature-researcher i { background: var(--green); }
+    .feature-detector i { background: var(--purple); }
+    .feature-prompt i { background: var(--orange); }
+
+    /* Footer */
+    footer {
+      background: var(--deep-blue); color: #fff; padding: 3rem 1rem;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    footer h4 { margin-bottom: 1rem; font-size: 1.1rem; }
+    footer ul { list-style: none; }
+    footer ul li { margin-bottom: 0.5rem; }
+    footer ul li a { color: #fff; font-size: 0.95rem; }
+    .footer-bottom { text-align: center; font-size: 0.9rem; color: #ddd; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="container">
+    <div class="logo">AssignSavvy</div>
+    <a href="pricing.html" class="btn">Get Started</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Master Your Workflow with AI</h1>
+      <p>Streamline academic workflow with AI-powered tools for writing, research, detection, and prompt engineering.</p>
+      <div class="cta-buttons">
+        <a href="pricing.html" class="btn-primary">Start Free Trial</a>
+        <a href="#features-section" class="btn-outline">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features-section">
+    <div class="container">
+      <h2>AI-powered Tools</h2>
+      <p>Streamline academic workflow with AI tools: writing, research, detection, prompt engineering.</p>
+      <div class="feature-grid">
+        <div class="feature-card feature-writer">
+          <i class="fa-solid fa-pen"></i>
+          <h3>AI Writer</h3>
+          <p>Generate high-quality content tailored to your needs in seconds.</p>
+        </div>
+        <div class="feature-card feature-researcher">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <h3>Researcher</h3>
+          <p>Comprehensive research tools to find and analyze reliable sources.</p>
+        </div>
+        <div class="feature-card feature-detector">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Detector</h3>
+          <p>Advanced plagiarism and AI content detection for academic integrity.</p>
+        </div>
+        <div class="feature-card feature-prompt">
+          <i class="fa-solid fa-code"></i>
+          <h3>Prompt Engineer</h3>
+          <p>Optimize AI prompts for clarity, efficiency, and better outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#">AI Writer</a></li>
+            <li><a href="#">Researcher</a></li>
+            <li><a href="#">Detector</a></li>
+            <li><a href="#">Prompt Engineer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 AssignSavvy. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
