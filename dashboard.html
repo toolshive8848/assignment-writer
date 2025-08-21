@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AssignSavvy - Dashboard</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --purple: #6B46C1;
+      --deep-blue: #4C51BF;
+      --blue: #3498db;
+      --green: #68D391;
+      --orange: #F6AD55;
+      --bg-light: #F7FAFC;
+      --bg-muted: #EDF2F7;
+      --text-dark: #2D3748;
+      --radius: 0.5rem;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--bg-light);
+      display: flex;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px; background: var(--deep-blue); color: #fff;
+      height: 100vh; display: flex; flex-direction: column; justify-content: space-between;
+      position: fixed; left: 0; top: 0;
+      padding: 1rem;
+    }
+    .sidebar .logo { font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; }
+    .sidebar nav a {
+      display: flex; align-items: center; padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem; border-radius: var(--radius); color: #fff;
+    }
+    .sidebar nav a i { margin-right: 0.75rem; }
+    .sidebar nav a.active, .sidebar nav a:hover { background: var(--purple); }
+    .sidebar .profile {
+      border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1rem; font-size: 0.9rem;
+    }
+
+    /* Top Bar */
+    .topbar {
+      position: fixed; left: 250px; top: 0; right: 0;
+      height: 60px; background: #fff; border-bottom: 1px solid var(--bg-muted);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 1.5rem; z-index: 2;
+    }
+    .topbar .title { font-weight: 600; }
+
+    /* Main */
+    main {
+      margin-left: 250px; margin-top: 60px; padding: 2rem; flex: 1;
+    }
+    .welcome {
+      background: #fff; padding: 1.5rem; border-radius: var(--radius);
+      margin-bottom: 2rem; box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .metrics {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; margin-bottom: 2rem;
+    }
+    .metric-card {
+      background: #fff; padding: 1rem; border-radius: var(--radius);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05); text-align: center;
+    }
+    .tools-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 1.5rem; margin-bottom: 2rem;
+    }
+    .tool-card {
+      background: #fff; padding: 1.5rem; border-radius: var(--radius);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05); position: relative;
+    }
+    .tool-card i { font-size: 2rem; margin-bottom: 1rem; }
+    .tool-card.locked { opacity: 0.6; }
+    .tool-card.locked::after {
+      content: "Pro Plan Only"; position: absolute; top: 10px; right: 10px;
+      font-size: 0.8rem; background: var(--purple); color: #fff; padding: 0.25rem 0.5rem; border-radius: var(--radius);
+    }
+    .recent-activity {
+      background: #fff; padding: 1.5rem; border-radius: var(--radius);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    table {
+      width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.95rem;
+    }
+    th, td {
+      padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--bg-muted);
+    }
+    th { background: var(--bg-muted); }
+    td .actions i { margin-right: 0.5rem; cursor: pointer; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar { width: 200px; }
+      .topbar { left: 200px; }
+      main { margin-left: 200px; }
+    }
+    @media (max-width: 600px) {
+      .sidebar { display: none; }
+      .topbar { left: 0; }
+      main { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div>
+      <div class="logo">AssignSavvy</div>
+      <nav>
+        <a href="#" class="active"><i class="fa-solid fa-house"></i> Dashboard</a>
+        <a href="writer.html"><i class="fa-solid fa-pen"></i> Writer</a>
+        <a href="researcher.html"><i class="fa-solid fa-magnifying-glass"></i> Researcher</a>
+        <a href="detector.html"><i class="fa-solid fa-shield-halved"></i> Detector</a>
+        <a href="prompt-engineer.html"><i class="fa-solid fa-code"></i> Prompt Engineer</a>
+        <a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i> History</a>
+      </nav>
+    </div>
+    <div class="profile">
+      <strong>John Doe</strong><br>
+      <span>Free Plan</span>
+    </div>
+  </aside>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="title">Dashboard</div>
+    <a href="index.html">Back to Home</a>
+  </div>
+
+  <!-- Main -->
+  <main>
+    <div class="welcome">
+      <h2>Welcome back, John!</h2>
+      <p>Get started by choosing one of the tools below.</p>
+      <a href="writer.html" class="btn-start">Start Writing</a>
+    </div>
+
+    <!-- Metrics -->
+    <div class="metrics">
+      <div class="metric-card">Credits Used: 120/200</div>
+      <div class="metric-card">Projects: 8</div>
+      <div class="metric-card">Words Generated: 4,500</div>
+      <div class="metric-card">Plan: Free</div>
+    </div>
+
+    <!-- AI Tools -->
+    <h3>AI Tools</h3>
+    <div class="tools-grid">
+      <div class="tool-card"><i class="fa-solid fa-pen"></i><h4>AI Writer</h4></div>
+      <div class="tool-card locked"><i class="fa-solid fa-magnifying-glass"></i><h4>Researcher</h4></div>
+      <div class="tool-card locked"><i class="fa-solid fa-shield-halved"></i><h4>Detector</h4></div>
+      <div class="tool-card"><i class="fa-solid fa-code"></i><h4>Prompt Engineer</h4></div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="recent-activity">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h3>Recent Activity</h3>
+        <a href="history.html">View All</a>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th><th>Type</th><th>Status</th><th>Date</th><th>Size</th><th>Words</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#001</td><td>Writer</td><td>Completed</td><td>2025-08-20</td><td>50KB</td><td>600</td>
+            <td class="actions"><i class="fa-solid fa-download"></i><i class="fa-solid fa-share-nodes"></i><i class="fa-solid fa-trash"></i></td>
+          </tr>
+          <tr>
+            <td>#002</td><td>Prompt</td><td>In Progress</td><td>2025-08-19</td><td>20KB</td><td>300</td>
+            <td class="actions"><i class="fa-solid fa-download"></i><i class="fa-solid fa-share-nodes"></i><i class="fa-solid fa-trash"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
